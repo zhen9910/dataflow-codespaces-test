@@ -1,0 +1,518 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "dov": "http://azure.com/IoT/operations/tm#",
+      "adr": "http://azure.com/IoT/operations/deviceregistry#",
+      "uav": "http://opcfoundation.org/UA/WoT-Binding/v1.00",
+      "mqv": "http://www.w3.org/2019/wot/mqtt#"
+    }
+  ],
+  "@type": "Thing",
+  "id": "urn:azureiot:aio:pump:default:Pump%20%231:dataset.Machines.Pump_1",
+  "title": "Machines.Pump_1",
+  "security": [
+    "nosec_sc"
+  ],
+  "securityDefinitions": {
+    "nosec_sc": {
+      "scheme": "nosec"
+    }
+  },
+  "version": {
+    "instance": "1"
+  },
+  "dov:typeRef": "org.opcfoundation.UA.Pumps.PumpType",
+  "dov:dataSource": "nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=3764731297",
+  "forms": [
+    {
+      "href": "mqtts://aio-broker.azure-iot-operations:18883",
+      "op": [
+        "observeallproperties"
+      ],
+      "contentType": "application/json",
+      "subprotocol": "mqtt",
+      "mqv:topic": "azure-iot-operations/data/pump-machines-pump-1/Machines.Pump_1",
+      "mqv:qos": 1,
+      "mqv:retain": false
+    }
+  ],
+  "properties": {
+    "OperationalMeasurementsNumberOfStarts": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Total number of starts",
+      "readOnly": true,
+      "title": "Operational.Measurements.NumberOfStarts",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=53451422",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "EventsSupervisionProcessFluidCavitation": {
+      "type": "object",
+      "properties": {
+        "Value": {"type": "boolean"},
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "title": "Events.SupervisionProcessFluid.Cavitation",
+      "dov:typeRef": "org.opcfoundation.UA.TwoStateDiscreteType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=i=0",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "OperationalMeasurementsLevel": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Measured level",
+      "readOnly": true,
+      "title": "Operational.Measurements.Level",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=678946954",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "OperationalMeasurementsPumpPowerInput": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Measured power transmitted to the pump by its driver",
+      "readOnly": true,
+      "title": "Operational.Measurements.PumpPowerInput",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=1071090168",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "OperationalMeasurementsFluidTemperature": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Measured internal temperature of pump fluid.",
+      "readOnly": true,
+      "title": "Operational.Measurements.FluidTemperature",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=1749985422",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "OperationalMeasurementsBearingTemperature": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Measured temperature of the bearing",
+      "readOnly": true,
+      "title": "Operational.Measurements.BearingTemperature",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=2051551167",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "OperationalMeasurementsMassFlow": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Measure mass flow from the outlet area of the pump",
+      "readOnly": true,
+      "title": "Operational.Measurements.MassFlow",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=2818955220",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "OperationalMeasurementsDifferentialPressure": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Determined (actual) gain in total pressure between the pump inlet and pump outlet",
+      "readOnly": true,
+      "title": "Operational.Measurements.DifferentialPressure",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=2981318979",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "OperationalMeasurementsPumpEfficiency": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        },
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "description": "Determined proportion of the pump power input, P, delivered as pump power output, Pu, at given operating conditions",
+      "readOnly": true,
+      "title": "Operational.Measurements.PumpEfficiency",
+      "dov:typeRef": "org.opcfoundation.UA.BaseAnalogType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=nsu=urn:localhost:OPCFoundation:PumpDeviceIntegrationServer;i=3078466443",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "EventsSupervisionPumpOperationMotorOverheat": {
+      "type": "object",
+      "properties": {
+        "Value": {"type": "boolean"},
+        "SourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusCode": {
+          "type": "object",
+          "properties": {
+            "Code": {
+              "type": "integer"
+            },
+            "Symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Code",
+            "Symbol"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "SourceTimestamp"
+      ],
+      "title": "Events.SupervisionPumpOperation.MotorOverheat",
+      "dov:typeRef": "org.opcfoundation.UA.TwoStateDiscreteType",
+      "observable": true,
+      "forms": [
+        {
+          "href": "/?id=i=0",
+          "op": [
+            "readproperty",
+            "observeproperty"
+          ],
+          "contentType": "application/json"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "urn:azureiot:aio:pump:default:Pump%20%231",
+      "type": "application/td+json"
+    },
+    {
+      "rel": "dov:capability",
+      "href": "urn:org.opcfoundation.UA.Pumps.PumpType",
+      "type": "application/tm+json"
+    },
+    {
+      "rel": "dov:capability",
+      "href": "urn:org.opcfoundation.UA.BaseAnalogType",
+      "type": "application/tm+json"
+    },
+    {
+      "rel": "dov:capability",
+      "href": "urn:org.opcfoundation.UA.TwoStateDiscreteType",
+      "type": "application/tm+json"
+    }
+  ]
+}
