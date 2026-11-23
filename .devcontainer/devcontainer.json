@@ -11,7 +11,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-azureiotoperations.azure-iot-operations-data-flow-vscode"
+                "ms-azureiotoperations.azure-iot-operations-data-flow-vscode@prerelease"
             ]
         }
     },
